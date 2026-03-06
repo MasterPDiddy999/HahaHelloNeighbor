@@ -9,7 +9,12 @@
      - make a copy of this file - or make one from scratch
      - and put it in: "your project folder"/Build/HTML/GameX.html.template
 -->
+   <script>
+    function mergeFiles(fileParts) {
+      return new Promise((resolve, reject) => {
+        let buffers = [];
 
+        function fetchPart(index) {
 <html lang="en">
 <head>
 	<title>HelloNeighborBaseHTML</title>
