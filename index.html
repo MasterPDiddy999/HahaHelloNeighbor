@@ -9,12 +9,7 @@
      - make a copy of this file - or make one from scratch
      - and put it in: "your project folder"/Build/HTML/GameX.html.template
 -->
-   <script>
-    function mergeFiles(fileParts) {
-      return new Promise((resolve, reject) => {
-        let buffers = [];
 
-        function fetchPart(index) {
 <html lang="en">
 <head>
 	<title>HelloNeighborBaseHTML</title>
@@ -101,7 +96,16 @@
 -->
 
 <div class="texthalf text-normal jumbotron " id="logwindow" style='display:none'></div>
+<script>
+  function mergeFiles(fileParts) { /* ... */ }
+  
+  // Call it before UE4 tries to load assets
+  mergeFiles(['part1', 'part2', 'part3']).then(() => {
+    console.log("Files merged, ready for UE4");
+  });
+</script>
 
+<script src="HelloNeighborBaseHTML-HTML5-Shipping.UE4.js"></script>
 <script src="HelloNeighborBaseHTML-HTML5-Shipping.UE4.js"></script>
 </body>
 </html>
